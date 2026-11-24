@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import { connection } from "next/server";
 import type { PlayerSummary, Source } from "@/adapters/types";
 import { createDemoAdapter } from "@/demo/demoAdapter";
@@ -51,6 +52,12 @@ export default function Home() {
         <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-200">
           You&apos;re viewing <strong>demo mode</strong>: every number below is sample data, so you
           can explore without logging in.
+        </p>
+        <p className="mt-3 text-sm">
+          Have a Steam ID?{" "}
+          <Link href="/deadlock" className="font-medium underline">
+            Look up live Deadlock stats
+          </Link>
         </p>
       </header>
 
