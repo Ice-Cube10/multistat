@@ -58,6 +58,10 @@ export default function Home() {
           <Link href="/deadlock" className="font-medium underline">
             Look up live Deadlock stats
           </Link>
+          {" · "}
+          <Link href="/youtube" className="font-medium underline">
+            Upload your YouTube history
+          </Link>
         </p>
       </header>
 

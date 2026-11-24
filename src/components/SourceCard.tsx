@@ -6,7 +6,7 @@ import type { PlayerSummary, RecentItem, Source } from "@/adapters/types";
 // Display name and accent color for each source.
 const SOURCE_META: Record<Source, { name: string; accent: string; recentTitle: string }> = {
   deadlock: { name: "Deadlock", accent: "bg-amber-500", recentTitle: "Recent matches" },
-  youtube: { name: "YouTube", accent: "bg-red-500", recentTitle: "Recent uploads" },
+  youtube: { name: "YouTube", accent: "bg-red-500", recentTitle: "Recently watched" },
   league: { name: "League of Legends", accent: "bg-sky-500", recentTitle: "Recent matches" },
   spotify: { name: "Spotify", accent: "bg-green-500", recentTitle: "Recently played" },
   overwatch: { name: "Overwatch", accent: "bg-orange-500", recentTitle: "Recent matches" },

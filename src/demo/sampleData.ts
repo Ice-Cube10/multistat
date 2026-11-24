@@ -35,20 +35,21 @@ export function getSampleData(): Partial<Record<Source, PlayerSummary>> {
 
     youtube: {
       source: "youtube",
-      displayName: "Demo Channel",
+      displayName: "Demo watch history",
       fetchedAt: hoursAgo(0),
       isDemo: true,
       stats: [
-        { label: "Subscribers", value: "12.4K" },
-        { label: "Total views", value: "1.8M" },
-        { label: "Videos", value: 86 },
-        { label: "Avg views / video", value: "20.9K" },
+        { label: "Videos watched", value: "4,812" },
+        { label: "Channels", value: "263" },
+        { label: "Top channel (212 videos)", value: "Pixel Kitchen" },
+        { label: "Busiest month", value: "Mar 2026" },
       ],
       recent: [
-        { title: "I Climbed to the Top Rank in One Week", subtitle: "48K views", date: hoursAgo(40), outcome: "neutral" },
-        { title: "Beginner's Guide: Every Hero Explained", subtitle: "31K views", date: hoursAgo(190), outcome: "neutral" },
-        { title: "Patch Notes Reaction + Tier List", subtitle: "19K views", date: hoursAgo(360), outcome: "neutral" },
-        { title: "Funniest Moments Compilation #12", subtitle: "9.2K views", date: hoursAgo(530), outcome: "neutral" },
+        { title: "How Fermentation Actually Works", subtitle: "Pixel Kitchen", date: hoursAgo(2) },
+        { title: "The Rise and Fall of the Floppy Disk", subtitle: "Retro Bytes", date: hoursAgo(5) },
+        { title: "Speedrunning a Classic in Under 20 Minutes", subtitle: "Frame Perfect", date: hoursAgo(27) },
+        { title: "Why Bridges Sway (and Why They Don't Fall)", subtitle: "Engineering Explained Simply", date: hoursAgo(31) },
+        { title: "Lo-fi Beats to Debug To", subtitle: "Night Shift Radio", date: hoursAgo(50) },
       ],
     },
 
