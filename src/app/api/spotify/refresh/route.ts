@@ -5,10 +5,11 @@
 
 import { NextResponse, type NextRequest } from "next/server";
 import { refreshAccessToken } from "@/adapters/spotify";
+import { getOrigin } from "@/lib/origin";
 import { ACCESS_COOKIE, cookieOptions, REFRESH_COOKIE } from "@/lib/spotifyCookies";
 
 export async function GET(request: NextRequest) {
-  const origin = new URL(request.url).origin;
+  const origin = getOrigin(request);
   const refreshToken = request.cookies.get(REFRESH_COOKIE)?.value;
   if (!refreshToken) return NextResponse.redirect(`${origin}/spotify`);
 

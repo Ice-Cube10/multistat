@@ -3,12 +3,14 @@
 
 import { NextResponse, type NextRequest } from "next/server";
 import { exchangeCode } from "@/adapters/spotify";
+import { getOrigin } from "@/lib/origin";
 import { ACCESS_COOKIE, cookieOptions, REFRESH_COOKIE, STATE_COOKIE } from "@/lib/spotifyCookies";
 
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
+  const origin = getOrigin(request);
   const back = (error?: string) => {
-    const res = NextResponse.redirect(`${url.origin}/spotify${error ? `?error=${error}` : ""}`);
+    const res = NextResponse.redirect(`${origin}/spotify${error ? `?error=${error}` : ""}`);
     res.cookies.delete(STATE_COOKIE);
     return res;
   };
@@ -21,7 +23,7 @@ export async function GET(request: NextRequest) {
   if (!code || !state || state !== savedState) return back("state"); // possible forged request
 
   try {
-    const tokens = await exchangeCode(code, `${url.origin}/api/spotify/callback`);
+    const tokens = await exchangeCode(code, `${origin}/api/spotify/callback`);
     const res = back();
     res.cookies.set(ACCESS_COOKIE, tokens.accessToken, cookieOptions(tokens.expiresIn));
     if (tokens.refreshToken) {

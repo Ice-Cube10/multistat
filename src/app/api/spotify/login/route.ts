@@ -2,10 +2,11 @@
 
 import { NextResponse } from "next/server";
 import { buildAuthUrl, isSpotifyConfigured } from "@/adapters/spotify";
+import { getOrigin } from "@/lib/origin";
 import { cookieOptions, STATE_COOKIE } from "@/lib/spotifyCookies";
 
 export async function GET(request: Request) {
-  const origin = new URL(request.url).origin;
+  const origin = getOrigin(request);
   if (!isSpotifyConfigured()) {
     return NextResponse.redirect(`${origin}/spotify?error=not_configured`);
   }
