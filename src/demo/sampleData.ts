@@ -79,10 +79,10 @@ export function getSampleData(): Partial<Record<Source, PlayerSummary>> {
       fetchedAt: hoursAgo(0),
       isDemo: true,
       stats: [
-        { label: "Top artist", value: "Neon Harbor" },
+        { label: "Top artist (4 wks)", value: "Neon Harbor" },
+        { label: "Top track (4 wks)", value: "Midnight Drive" },
         { label: "Top genre", value: "Synthwave" },
-        { label: "Minutes (4 wks)", value: 3240 },
-        { label: "Unique artists", value: 187 },
+        { label: "Artists in top 50 tracks", value: 31 },
       ],
       recent: [
         { title: "Midnight Drive", subtitle: "Neon Harbor", date: hoursAgo(1) },

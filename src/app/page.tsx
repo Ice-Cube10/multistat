@@ -67,6 +67,10 @@ export default function Home() {
           <Link href="/league" className="font-medium underline">
             Look up a League player
           </Link>
+          {" · "}
+          <Link href="/spotify" className="font-medium underline">
+            Connect Spotify
+          </Link>
         </p>
       </header>
 
