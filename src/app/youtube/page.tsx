@@ -16,7 +16,16 @@ export default function YouTubePage() {
 
       <ol className="mt-4 list-decimal space-y-1 pl-5 text-sm text-zinc-700 dark:text-zinc-300">
         <li>
-          Go to <strong>takeout.google.com</strong> and deselect everything except <strong>YouTube and YouTube Music</strong>.
+          Go to{" "}
+          <a
+            href="https://takeout.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium underline"
+          >
+            takeout.google.com
+          </a>{" "}
+          and deselect everything except <strong>YouTube and YouTube Music</strong>.
         </li>
         <li>
           Click <em>All YouTube data included</em>, keep only <strong>history</strong>, and under <em>Multiple formats</em> set history to <strong>JSON</strong>.
