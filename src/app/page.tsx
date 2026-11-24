@@ -3,6 +3,7 @@ import Link from "next/link";
 import { connection } from "next/server";
 import type { PlayerSummary, Source } from "@/adapters/types";
 import { createDemoAdapter } from "@/demo/demoAdapter";
+import RiotDisclaimer from "@/components/RiotDisclaimer";
 import SourceCard from "@/components/SourceCard";
 
 // The sources shown on the dashboard, in priority order.
@@ -62,12 +63,20 @@ export default function Home() {
           <Link href="/youtube" className="font-medium underline">
             Upload your YouTube history
           </Link>
+          {" · "}
+          <Link href="/league" className="font-medium underline">
+            Look up a League player
+          </Link>
         </p>
       </header>
 
       <Suspense fallback={<DashboardSkeleton />}>
         <Dashboard />
       </Suspense>
+
+      <div className="mt-10">
+        <RiotDisclaimer />
+      </div>
     </main>
   );
 }
